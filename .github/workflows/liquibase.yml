@@ -1,5 +1,7 @@
 name: deploy using liquibase
-on: push
+on: 
+  push:
+    branches: ['develop']
 
 jobs:
   node-docker:
