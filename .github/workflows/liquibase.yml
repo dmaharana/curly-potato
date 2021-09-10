@@ -1,0 +1,12 @@
+name: deploy using liquibase
+on: push
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: liquibase/liquibase:latest
+    steps:
+      - name: Show liquibase version
+        run: liquibase -v
+    
