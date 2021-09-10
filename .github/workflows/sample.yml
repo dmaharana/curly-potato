@@ -1,14 +1,22 @@
 name: Shell Commands
 
 on: 
+  push:
   pull_request:
     types:
       - closed
+env:
+  APP_USER: ${{ secrets.APP_USER }}
+  APP_PASS: ${{ secrets.APP_PASS }}
 
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
+      - name: publish
+        run: |
+          echo "APP_USER: ${APP_USER}"
+          echo "APP_PASS: ${APP_PASS}"
       - name: echo a string on dev
         run: echo "Hello World"
       - name: multiline script
