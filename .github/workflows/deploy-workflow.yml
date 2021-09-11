@@ -6,13 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Liquibase Action
     steps:
-      - uses: actions/checkout@v2
-      - uses: liquibase/liquibase-github-action@v2
+      - uses: actions/checkout@v2.3.4
+      - uses: liquibase/liquibase-github-action@v3
         with:
           operation: 'update'
-          classpath: '/liquibase/lib'
-          changeLogFile: 'example/changelogs/sample-changelog.sql'
-          referenceUrl: 'net.snowflake.client.jdbc.SnowflakeDriver'
+          classpath: 'example/changelogs'
+          changeLogFile: 'sample-changelog.sql'
           username: ${{ secrets.APP_USER }}
           password: ${{ secrets.APP_PASS }}
           url: jdbc:snowflake://ie67702.southeast-asia.azure.snowflakecomputing.com:443/?db=SHOP&warehouse=COMPUTE_WH&schema=PUBLIC
