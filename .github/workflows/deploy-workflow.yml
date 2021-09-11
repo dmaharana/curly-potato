@@ -9,10 +9,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: liquibase/liquibase-github-action@v2
         with:
-          operation: 'updateSQL'
+          operation: 'update'
           classpath: 'sf-lib/snowflake-jdbc-3.13.7.jar:sf-lib/liquibase-snowflake-4.4.3.jar'
           changeLogFile: 'example/changelogs/sample-changelog.sql'
-          referenceUrl: 'net.snowflake.client.jdbc.SnowflakeDriver'
+          referenceUrl: net.snowflake.client.jdbc.SnowflakeDriver
           username: ${{ secrets.APP_USER }}
           password: ${{ secrets.APP_PASS }}
-          url: ${{ secrets.SF_URL }}
+          url: jdbc:snowflake://ie67702.southeast-asia.azure.snowflakecomputing.com:443/?db=SHOP&warehouse=COMPUTE_WH&schema=PUBLIC
