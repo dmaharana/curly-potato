@@ -10,7 +10,7 @@ jobs:
       - uses: liquibase/liquibase-github-action@v2
         with:
           operation: 'rollbackCount'
-          count: 1
+          count: 2
           classpath: 'sf-lib/snowflake-jdbc-3.13.7.jar:sf-lib/liquibase-snowflake-4.4.3.jar'
           changeLogFile: 'example/changelogs/sample-changelog.sql'
           referenceUrl: net.snowflake.client.jdbc.SnowflakeDriver
