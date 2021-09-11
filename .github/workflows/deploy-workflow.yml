@@ -13,9 +13,6 @@ jobs:
           classpath: 'sf-lib/snowflake-jdbc-3.13.7.jar:sf-lib/liquibase-snowflake-4.4.3.jar'
           changeLogFile: 'example/changelogs/sample-changelog.sql'
           driver: net.snowflake.client.jdbc.SnowflakeDriver
-          db: 'SHOP'
-          warehouse: 'COMPUTE_WH'
-          schema: 'PUBLIC'
           username: ${{ secrets.APP_USER }}
           password: ${{ secrets.APP_PASS }}
           url: ${{ secrets.SF_URL }}
