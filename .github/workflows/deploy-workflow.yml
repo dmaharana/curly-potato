@@ -16,4 +16,4 @@ jobs:
           referenceUrl: net.snowflake.client.jdbc.SnowflakeDriver
           username: ${{ secrets.APP_USER }}
           password: ${{ secrets.APP_PASS }}
-          url: jdbc:snowflake://${{ secrets.SF_ACCOUNT }}.snowflakecomputing.com:443/?db=SHOP&warehouse=COMPUTE_WH&schema=PUBLIC
+          url: jdbc:snowflake://${{ secrets.SF_ACCOUNT }}.snowflakecomputing.com:443/?db=${{ secrets.SF_DB }}&warehouse=${{ secrets.SF_WAREHOUSE }}&schema=${{ secrets.SF_SCHEMA }}
