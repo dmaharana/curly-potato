@@ -10,8 +10,8 @@ jobs:
       - uses: liquibase/liquibase-github-action@v2
         with:
           operation: 'update'
-          classpath: 'example/changelogs'
-          changeLogFile: 'sample-changelog.sql'
+          classpath: 'sf-lib/snowflake-jdbc-3.13.7.jar:sf-lib/liquibase-snowflake-4.4.3.jar'
+          changeLogFile: 'example/changelogs/sample-changelog.sql'
           driver: net.snowflake.client.jdbc.SnowflakeDriver
           db: 'SHOP'
           warehouse: 'COMPUTE_WH'
