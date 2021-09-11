@@ -1,10 +1,10 @@
 name: Shell Commands
 
-on: 
-  push:
-  pull_request:
-    types:
-      - closed
+# on: 
+#   push:
+#   pull_request:
+#     types:
+#       - closed
 env:
   APP_USER: ${{ secrets.APP_USER }}
   APP_PASS: ${{ secrets.APP_PASS }}
