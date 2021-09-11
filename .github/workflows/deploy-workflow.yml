@@ -10,7 +10,7 @@ jobs:
       - uses: liquibase/liquibase-github-action@v2
         with:
           operation: 'update'
-          classpath: 'example/changelogs'
+          classpath: '/liquibase/lib'
           changeLogFile: 'example/changelogs/sample-changelog.sql'
           referenceUrl: 'net.snowflake.client.jdbc.SnowflakeDriver'
           username: ${{ secrets.APP_USER }}
