@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: liquibase/liquibase-github-action@v2
         with:
-          operation: 'update'
+          operation: 'diff'
           classpath: 'sf-lib/snowflake-jdbc-3.13.7.jar:sf-lib/liquibase-snowflake-4.4.3.jar'
           changeLogFile: 'example/changelogs/sample-changelog.sql'
           referenceUrl: net.snowflake.client.jdbc.SnowflakeDriver
